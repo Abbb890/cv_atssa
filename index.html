@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خبيرة سيرة ذاتية ATS | cv_atss</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --dark: #1A1A1A;
+    --teal: #2D5A4F;
+    --teal-light: #3D7A6A;
+    --gold: #C4A882;
+    --gold-light: #E8D5B5;
+    --text-muted: #6B6B6B;
+    --white: #FFFFFF;
+    --card-bg: #FDFAF5;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(245,240,232,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gold-light);
+    padding: 14px 5%;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-size: 15px; font-weight: 700; color: var(--teal);
+    letter-spacing: 2px;
+  }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--dark); font-size: 14px; font-weight: 500;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 100px 5% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, #E8DDD0 0%, var(--cream) 100%);
+  }
+  .hero-deco {
+    position: absolute;
+    width: 500px; height: 500px;
+    border: 1px solid rgba(196,168,130,0.2);
+    border-radius: 50%;
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+    animation: spin 30s linear infinite;
+  }
+  .hero-deco2 {
+    position: absolute;
+    width: 320px; height: 320px;
+    border: 1px solid rgba(45,90,79,0.12);
+    border-radius: 50%;
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+    animation: spin 20s linear infinite reverse;
+  }
+  @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center; max-width: 750px;
+  }
+  .logo-img {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    margin-bottom: 28px;
+    box-shadow: 0 8px 30px rgba(196,168,130,0.3);
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 12px; font-weight: 700; letter-spacing: 3px;
+    color: var(--teal);
+    background: rgba(45,90,79,0.08);
+    padding: 6px 20px; border-radius: 20px;
+    margin-bottom: 20px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 6vw, 58px);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: 18px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero h1 span { color: var(--teal); }
+  .hero p {
+    font-size: 17px; color: var(--text-muted);
+    line-height: 1.9; margin-bottom: 40px;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hero-btns {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+  .btn-primary {
+    background: var(--teal); color: #fff;
+    padding: 14px 34px; border-radius: 50px;
+    font-size: 15px; font-weight: 700;
+    text-decoration: none; transition: all 0.3s;
+    font-family: 'Tajawal', sans-serif;
+  }
+  .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(45,90,79,0.3); }
+  .btn-outline {
+    background: transparent; color: var(--teal);
+    border: 2px solid var(--teal);
+    padding: 13px 34px; border-radius: 50px;
+    font-size: 15px; font-weight: 700;
+    text-decoration: none; transition: all 0.3s;
+    font-family: 'Tajawal', sans-serif;
+  }
+  .btn-outline:hover { background: var(--teal); color: #fff; transform: translateY(-2px); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* STATS */
+  .stats {
+    background: var(--teal);
+    padding: 50px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0;
+  }
+  .stat-item {
+    text-align: center; padding: 20px;
+    border-left: 1px solid rgba(255,255,255,0.12);
+  }
+  .stat-item:last-child { border-left: none; }
+  .stat-num {
+    font-size: 36px; font-weight: 900; color: var(--gold-light);
+    display: block;
+  }
+  .stat-label { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+
+  /* SERVICES */
+  .section { padding: 90px 5%; }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-tag {
+    font-size: 11px; font-weight: 700; letter-spacing: 3px;
+    color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(26px, 4vw, 38px); font-weight: 800; color: var(--dark);
+    line-height: 1.3;
+  }
+  .section-line {
+    width: 50px; height: 3px; background: var(--teal);
+    margin: 16px auto 0; border-radius: 2px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; max-width: 1100px; margin: 0 auto;
+  }
+  .service-card {
+    background: var(--card-bg);
+    border: 1px solid var(--gold-light);
+    border-radius: 20px;
+    padding: 36px 30px;
+    transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 80px; height: 80px;
+    background: radial-gradient(circle, rgba(196,168,130,0.15) 0%, transparent 70%);
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(45,90,79,0.12);
+    border-color: var(--teal);
+  }
+  .service-icon {
+    width: 52px; height: 52px;
+    background: rgba(45,90,79,0.08);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 20px;
+  }
+  .service-title {
+    font-size: 19px; font-weight: 800; color: var(--dark);
+    margin-bottom: 10px;
+  }
+  .service-desc {
+    font-size: 14px; color: var(--text-muted); line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  .service-price {
+    font-size: 22px; font-weight: 900; color: var(--teal);
+  }
+  .service-price span { font-size: 13px; font-weight: 400; color: var(--text-muted); }
+
+  /* PACKAGES */
+  .packages { background: var(--dark); padding: 90px 5%; }
+  .packages .section-title { color: var(--white); }
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px; max-width: 900px; margin: 0 auto;
+  }
+  .pkg-card {
+    background: #2A2A2A;
+    border: 1px solid #3A3A3A;
+    border-radius: 24px;
+    padding: 40px 32px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .pkg-card.featured {
+    background: var(--teal);
+    border-color: var(--teal-light);
+  }
+  .pkg-card:hover { transform: translateY(-6px); }
+  .pkg-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    padding: 4px 18px; border-radius: 20px;
+  }
+  .pkg-name {
+    font-size: 22px; font-weight: 800;
+    color: var(--white); margin-bottom: 8px;
+  }
+  .pkg-price {
+    font-size: 48px; font-weight: 900;
+    color: var(--gold-light); margin: 16px 0;
+  }
+  .pkg-price sub { font-size: 18px; font-weight: 400; }
+  .pkg-features {
+    list-style: none; margin: 24px 0 32px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .pkg-features li {
+    font-size: 14px; color: rgba(255,255,255,0.8);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .pkg-features li::before { content: '✓'; color: var(--gold); font-weight: 700; }
+  .pkg-btn {
+    width: 100%;
+    background: var(--gold); color: var(--dark);
+    border: none; border-radius: 50px;
+    padding: 14px 24px; font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: all 0.3s;
+    font-family: 'Tajawal', sans-serif;
+    text-decoration: none; display: block;
+  }
+  .pkg-btn:hover { background: var(--gold-light); transform: scale(1.02); }
+  .pkg-card.featured .pkg-btn { background: #fff; color: var(--teal); }
+
+  /* PORTFOLIO */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px; max-width: 1100px; margin: 0 auto;
+  }
+  .portfolio-card {
+    background: var(--card-bg);
+    border: 1px solid var(--gold-light);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .portfolio-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(45,90,79,0.12); }
+  .portfolio-img {
+    width: 100%; height: 220px; object-fit: cover; object-position: top;
+  }
+  .portfolio-body { padding: 22px; }
+  .portfolio-tag {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    color: var(--teal); text-transform: uppercase; margin-bottom: 8px;
+  }
+  .portfolio-title { font-size: 16px; font-weight: 700; color: var(--dark); }
+
+  /* WHY */
+  .why { background: #F0EAE0; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px; max-width: 900px; margin: 0 auto;
+  }
+  .why-card {
+    text-align: center; padding: 32px 20px;
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--gold-light);
+    transition: all 0.3s;
+  }
+  .why-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(45,90,79,0.1); }
+  .why-icon { font-size: 36px; margin-bottom: 14px; }
+  .why-title { font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+  .why-desc { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+  /* CTA */
+  .cta-section {
+    background: var(--teal);
+    padding: 90px 5%;
+    text-align: center;
+  }
+  .cta-section h2 { font-size: clamp(26px,4vw,42px); font-weight: 800; color: #fff; margin-bottom: 16px; }
+  .cta-section p { font-size: 16px; color: rgba(255,255,255,0.8); margin-bottom: 36px; }
+
+  /* SOCIAL */
+  .social-bar {
+    position: fixed; left: 20px; top: 50%;
+    transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 12px;
+    z-index: 50;
+  }
+  .social-link {
+    width: 44px; height: 44px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    border: 1px solid var(--gold-light);
+  }
+  .social-link:hover { background: var(--teal); transform: scale(1.1); }
+  .social-link svg { width: 20px; height: 20px; fill: none; stroke: var(--teal); stroke-width: 1.8; transition: stroke 0.3s; }
+  .social-link:hover svg { stroke: #fff; }
+
+  /* REVIEWS */
+  .reviews { background: var(--dark); padding: 90px 5%; }
+  .reviews .section-title { color: var(--white); }
+  .reviews-track-wrap { overflow: hidden; position: relative; }
+  .reviews-track-wrap::before, .reviews-track-wrap::after {
+    content: ''; position: absolute; top: 0; width: 80px; height: 100%; z-index: 2;
+    pointer-events: none;
+  }
+  .reviews-track-wrap::before { right: 0; background: linear-gradient(to left, #1A1A1A, transparent); }
+  .reviews-track-wrap::after { left: 0; background: linear-gradient(to right, #1A1A1A, transparent); }
+  .reviews-track {
+    display: flex; gap: 20px;
+    animation: scrollLeft 28s linear infinite;
+    width: max-content;
+  }
+  .reviews-track:hover { animation-play-state: paused; }
+  @keyframes scrollLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .review-card {
+    background: #262626;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 28px 28px 22px;
+    width: 300px; flex-shrink: 0;
+    position: relative;
+    transition: border-color 0.3s;
+  }
+  .review-card:hover { border-color: var(--gold); }
+  .review-quote {
+    font-size: 42px; line-height: 1;
+    color: var(--gold);
+    font-family: Georgia, serif;
+    margin-bottom: 12px;
+    opacity: 0.6;
+  }
+  .review-text {
+    font-size: 14px; color: rgba(255,255,255,0.82);
+    line-height: 1.85; margin-bottom: 20px;
+  }
+  .review-footer { display: flex; align-items: center; gap: 12px; }
+  .review-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .review-name { font-size: 13px; font-weight: 700; color: #fff; }
+  .review-stars { font-size: 11px; color: var(--gold); letter-spacing: 1px; margin-top: 2px; }
+  .review-badge {
+    position: absolute; top: 16px; left: 16px;
+    background: rgba(196,168,130,0.15);
+    border: 1px solid rgba(196,168,130,0.3);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 10px; font-weight: 700; letter-spacing: 1px;
+    color: var(--gold);
+  }
+
+  /* FOOTER */
+  footer {
+    background: #111;
+    padding: 40px 5%;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+  }
+  footer span { color: var(--gold); }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .social-bar { display: none; }
+    .stat-item { border-left: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">@CV_ATSS</span>
+  <ul class="nav-links">
+    <li><a href="#services">الخدمات</a></li>
+    <li><a href="#packages">الباقات</a></li>
+    <li><a href="#portfolio">أعمالي</a></li>
+    <li><a href="#why">لماذا أنا</a></li>
+    <li><a href="#contact">تواصل</a></li>
+  </ul>
+</nav>
+
+<!-- SOCIAL BAR -->
+<div class="social-bar">
+  <a class="social-link" href="https://wa.me/966596307531" target="_blank" title="واتساب">📱</a>
+  <a class="social-link" href="https://www.tiktok.com/@cv_atss" target="_blank" title="تيك توك">🎵</a>
+  <a class="social-link" href="https://www.instagram.com/cv_atss" target="_blank" title="انستقرام">📸</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-deco"></div>
+  <div class="hero-deco2"></div>
+  <div class="hero-content">
+    <img src="IMG_2452.jpeg" alt="cv_atss logo" class="logo-img" onerror="this.style.display='none'">
+    <span class="hero-tag">✦ خبيرة معتمدة في السيرة الذاتية ولينكدان ✦</span>
+    <h1>خبيرة <span>سيرة ذاتية ATS</span><br>ولينكدان الاحترافي</h1>
+    <p>أساعدك تحصل على وظيفة أحلامك من خلال سيرة ذاتية تتخطى أنظمة ATS<br>وحساب لينكدان يجذب أصحاب العمل إليك مباشرة</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/966596307531" class="btn-primary" target="_blank">🟢 تواصل الآن عبر واتساب</a>
+      <a href="#services" class="btn-outline">استعرض الخدمات</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item">
+    <span class="stat-num">+500</span>
+    <span class="stat-label">سيرة ذاتية مُصمَّمة</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">98%</span>
+    <span class="stat-label">نسبة رضا العملاء</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">ATS</span>
+    <span class="stat-label">معتمدة بنظام ATS</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">2 لغة</span>
+    <span class="stat-label">عربي وإنجليزي</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-header reveal">
+    <span class="section-tag">الخدمات</span>
+    <h2 class="section-title">ماذا أقدم لك؟</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">📄</div>
+      <h3 class="service-title">سيرة ذاتية ATS</h3>
+      <p class="service-desc">سيرة ذاتية احترافية مُصمَّمة خصيصًا لاجتياز أنظمة ATS وجذب أصحاب العمل. متاحة بالعربي والإنجليزي.</p>
+      <div class="service-price">25 ريال <span>/ ملف واحد</span></div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">💼</div>
+      <h3 class="service-title">تصميم لينكدان</h3>
+      <p class="service-desc">تحسين كامل لحساب لينكدان يجعلك تظهر في نتائج البحث ويستقطب المُوظِّفين والشركات إليك.</p>
+      <div class="service-price">50 ريال <span>/ حساب كامل</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages" id="packages">
+  <div class="section-header reveal">
+    <span class="section-tag" style="color: var(--gold);">الباقات</span>
+    <h2 class="section-title">باقات مميزة لكل مرحلة</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="packages-grid">
+    <div class="pkg-card reveal">
+      <div class="pkg-badge">⭐ الأكثر طلبًا</div>
+      <div class="pkg-name">باقة التخرج</div>
+      <div class="pkg-price"><sub>ريال </sub>100</div>
+      <ul class="pkg-features">
+        <li>سيرة ذاتية ATS بالعربي</li>
+        <li>سيرة ذاتية ATS بالإنجليزي</li>
+        <li>تصميم حساب لينكدان</li>
+        <li>مناسبة لحديثي التخرج</li>
+      </ul>
+      <a href="https://wa.me/966596307531?text=مرحباً، أريد الاستفسار عن باقة التخرج" class="pkg-btn" target="_blank">اطلب الآن</a>
+    </div>
+    <div class="pkg-card featured reveal">
+      <div class="pkg-badge">🔥 الأفضل قيمة</div>
+      <div class="pkg-name">باقة التوظيف</div>
+      <div class="pkg-price"><sub>ريال </sub>100</div>
+      <ul class="pkg-features">
+        <li>سيرة ذاتية ATS بالعربي</li>
+        <li>سيرة ذاتية ATS بالإنجليزي</li>
+        <li>تصميم حساب لينكدان</li>
+        <li>مثالية للباحثين عن عمل</li>
+      </ul>
+      <a href="https://wa.me/966596307531?text=مرحباً، أريد الاستفسار عن باقة التوظيف" class="pkg-btn" target="_blank">اطلب الآن</a>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="section-header reveal">
+    <span class="section-tag">أعمالي</span>
+    <h2 class="section-title">نماذج من سيراتي الذاتية</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="portfolio-grid">
+    <div class="portfolio-card reveal">
+      <img src="IMG_2447.jpeg" alt="سيرة ذاتية عربية ATS" class="portfolio-img">
+      <div class="portfolio-body">
+        <div class="portfolio-tag">سيرة ذاتية · عربي</div>
+        <div class="portfolio-title">سيرة ذاتية ATS احترافية — النسخة العربية</div>
+      </div>
+    </div>
+    <div class="portfolio-card reveal">
+      <img src="IMG_2446.jpeg" alt="سيرة ذاتية إنجليزية ATS" class="portfolio-img">
+      <div class="portfolio-body">
+        <div class="portfolio-tag">سيرة ذاتية · إنجليزي</div>
+        <div class="portfolio-title">سيرة ذاتية ATS احترافية — النسخة الإنجليزية</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section why" id="why">
+  <div class="section-header reveal">
+    <span class="section-tag">مميزاتي</span>
+    <h2 class="section-title">لماذا أختارني؟</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">🎯</div>
+      <div class="why-title">خبرة ATS حقيقية</div>
+      <div class="why-desc">أفهم كيف تعمل أنظمة تتبع المتقدمين وأصمم سيرتك لتتخطاها بنجاح</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🌐</div>
+      <div class="why-title">عربي وإنجليزي</div>
+      <div class="why-desc">خدمة متكاملة باللغتين لتصل إلى أكبر عدد ممكن من الفرص الوظيفية</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">⚡</div>
+      <div class="why-title">تسليم سريع</div>
+      <div class="why-desc">لا وقت للانتظار، أسلّمك سيرتك الذاتية في أسرع وقت ممكن</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">💡</div>
+      <div class="why-title">لينكدان مُحسَّن</div>
+      <div class="why-desc">أجعل حسابك يظهر في أول نتائج البحث ليصلك الموظفون أولًا</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2 class="reveal">ابدأ رحلتك الوظيفية الآن! 🚀</h2>
+  <p class="reveal">تواصل معي عبر واتساب أو تابعني على التيك توك والانستقرام للمزيد من النصائح المجانية</p>
+  <div class="hero-btns reveal">
+    <a href="https://wa.me/966596307531" class="btn-primary" style="background:#fff;color:var(--teal);" target="_blank">📱 واتساب: 966596307531+</a>
+    <a href="https://www.tiktok.com/@cv_atss" class="btn-outline" style="border-color:#fff;color:#fff;" target="_blank">🎵 تيك توك @cv_atss</a>
+    <a href="https://www.instagram.com/cv_atss" class="btn-outline" style="border-color:#fff;color:#fff;" target="_blank">📸 انستقرام @cv_atss</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>جميع الحقوق محفوظة © 2025 — <span>@cv_atss</span> | خبيرة سيرة ذاتية ATS ولينكدان</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => obs.observe(r));
+</script>
+</body>
+</html>
